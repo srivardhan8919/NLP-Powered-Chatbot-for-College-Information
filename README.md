@@ -49,18 +49,23 @@ The chatbot is designed to streamline communication for students, applicants, an
 
 ---
 
-📁 Project File Structure
+## 📁 **Project File Structure**  
 
+```
 nlp-college-chatbot
 │
 ├── app.py
 ├── requirements.txt
 ├── static/
+│   ├── background_pic.jpg
+│   ├── student_image.png
+│   └── style.css
 ├── templates/
 │   └── index.html
 ├── knowledge_base.py
+```  
 
----
+---  
 
 ## 📊 **How It Works**  
 1. **Intent Detection**:  
