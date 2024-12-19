@@ -96,6 +96,6 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## 🔗 **Contact**  
 For any queries or suggestions:  
-GitHub: https://github.com/srivardhan8919
-LinkedIn: https://linkedin.com/in/sri-vardhan-nutenki-207b55249
-G-mail: srivardhannani8919@gmail.com
+- **GitHub**: [https://github.com/srivardhan8919](https://github.com/srivardhan8919)  
+- **LinkedIn**: [https://linkedin.com/in/sri-vardhan-nutenki-207b55249](https://linkedin.com/in/sri-vardhan-nutenki-207b55249)  
+- **G-mail**: srivardhannani8919@gmail.com  
