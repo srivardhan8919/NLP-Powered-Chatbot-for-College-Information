@@ -81,7 +81,3 @@ For any queries or suggestions:
 GitHub: https://github.com/srivardhan8919
 LinkedIn: https://linkedin.com/in/sri-vardhan-nutenki-207b55249
 G-mail: srivardhannani8919@gmail.com
-
----  
-
-Feel free to adapt the contact links and customize further! This format ensures clarity and provides essential information while aligning with your past README style.
