@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Inquiry Chatbot</title>
+    <link rel="stylesheet" href="/static/styles.css"> <!-- Link to the CSS file -->
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>Vaagdevi College Inquiry Chatbot</h1>
+        </div>
+
+        <!-- Chatbox Section -->
+        <div id="chat-box" class="chat-box"></div>
+
+        <!-- Input Section with Student Image -->
+        <div class="input-container">
+            <img src="/static/student_image.png" alt="Student" class="student-image">
+            <input id="user-input" type="text" placeholder="Ask me anything about the college...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        function sendMessage() {
+            const userInput = document.getElementById('user-input').value;
+            if (userInput.trim() === "") {
+                alert("Please enter a message.");
+                return;
+            }
+
+            // Sending data as JSON
+            fetch('/get_response', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'  // Correct content type
+                },
+                body: JSON.stringify({ user_input: userInput })  // Send input as JSON
+            })
+            .then(response => response.json())
+            .then(data => {
+                const chatBox = document.getElementById('chat-box');
+                if (data.response) {
+                    chatBox.innerHTML += `<div class="message user"><strong>You:</strong> ${userInput}</div><div class="message bot"><strong>Bot:</strong> ${data.response}</div>`;
+                } else {
+                    chatBox.innerHTML += `<div class="message error"><strong>Bot:</strong> Response unavailable!</div>`;
+                }
+                document.getElementById('user-input').value = '';  // Clear input field
+                chatBox.scrollTop = chatBox.scrollHeight; // Scroll to bottom
+            })
+            .catch(err => {
+                console.error('Error:', err);
+                const chatBox = document.getElementById('chat-box');
+                chatBox.innerHTML += `<div class="message error"><strong>Bot:</strong> There was an error processing your request.</div>`;
+            });
+        }
+    </script>
+</body>
+</html>
